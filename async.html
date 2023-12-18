@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Login Simulation</title>
+</head>
+<body>
+
+    <h2>Login</h2>
+
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="authenticateUser()">Login</button>
+    </form>
+    <script>
+        
+        function simulation(username, password) {
+            return new Promise((resolve) => {
+               
+                setTimeout(() => {
+                    const isValid = users.some(user => user.username === username && user.password === password);
+                    resolve(isValid); console.log("the 3sec delay")
+                }, 3000); 
+            });
+        }
+        console.log("this is first")
+
+        async function authenticateUser() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+                 seeingDelay();
+            try {
+                console.log("authenticate delayed")
+                const isValid = await simulation(username, password);
+                  
+                if (isValid) {
+                    alert("Login successful!");
+                   
+                } else {
+                    alert("Please try again.");
+                }
+            } catch (error) {
+                console.error("error");
+                
+            }
+            
+        }
+        function seeingDelay(){
+
+            setTimeout(()=>{
+                console.log("the 2 second delay")
+            },4000)
+        }
+        console.log("delayed second")
+
+
+        const users = [
+            { username: "Nati", password: "nati" },
+            { username: "Nb", password: "Nb" },
+           
+        ];
+    </script>
+
+</body>
+</html>
