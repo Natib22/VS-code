@@ -26,3 +26,4 @@ function main() {
   let x = readline();
   console.log(x);
 }
+fs.writeFileSync("output.txt", arrangement, "utf-8");
