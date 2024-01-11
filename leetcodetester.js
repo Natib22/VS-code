@@ -1,21 +1,29 @@
-var canSeePersonsCount = function (heights) {
+var findMedianSortedArrays = function (nums1, nums2) {
   let myarray = [];
-  let stack = [];
-
-  let n = heights.length;
-
-  for (let i = n - 1; i >= 0; i--) {
-    let count = 0;
-
-    while (stack.length > 0 && heights[i] > stack[stack.length - 1]) {
-      stack.pop();
-      count++;
+  let i = 0;
+  let j = 0;
+  while (i < nums1.length && j < nums2.length) {
+    if (nums1[i] < nums2[j]) {
+      myarray.push(nums1[i]);
+      i++;
+    } else {
+      myarray.push(nums2[j]);
+      j++;
     }
-    console.log(stack);
-    myarray[i] = count + stack.length;
-    stack.push(heights[i]); // Push the current building height onto the stack
   }
-
-  return myarray;
+  console.log(myarray);
+  console.log(j);
+  console.log(i);
+  // if (j < nums2.length) {
+  //   while (j < nums2.length) myarray.push(nums2[j]);
+  // }
+  // if (i < nums1.length) {
+  //   while (i < nums1.length) myarray.push(nums1[i]);
+  // }
+  // if (myarray.length % 2 === 0) {
+  //   return (myarray[length / 2 - 1] + myarray[length / 2]) / 2;
+  // } else {
+  //   return myarray[Math.floor(length / 2)];
+  // }
 };
-canSeePersonsCount([10, 6, 8, 5, 11, 9]);
+findMedianSortedArrays([1, 2, 3, 4], [2, 36, 7]);
