@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 using namespace std;
 
 struct profile
@@ -8,18 +9,25 @@ struct profile
     string LastName;
     long long phone;
     int last = 0;
+    // fstream myfile;
     void Add()
     {
+        fstream myfile;
+        myfile.open("Contacts.txt", ios::out | ios::app);
         cout << "Enter the person's First Name: ";
         cin >> firstName;
+        myfile << firstName << ",";
         cout << endl;
         cout << "Enter the person's Last Name: ";
         cin >> LastName;
+        myfile << LastName << ",";
         cout << endl;
         cout << "Enter the person's phone number: ";
         cin >> phone;
+        myfile << phone << "," << "\n";
         cout << endl;
         last++;
+        myfile.close();
     }
 };
 
