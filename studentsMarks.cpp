@@ -24,7 +24,7 @@ int main()
 {
     Marks student[5];
     cout << "A program to calculate the average marks of students\n";
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 5; i++)
     {
         cout << " Enter the name of studente " << i + 1 << endl;
         cin >> student[i].name;
