@@ -10,6 +10,7 @@ struct profile
     long long phone;
     int last = 0;
     // fstream myfile;
+
     void Add()
     {
         fstream myfile;
