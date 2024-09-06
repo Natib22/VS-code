@@ -17,6 +17,7 @@ struct profile
         }
     }
 };
+
 int main()
 {
     profile person[10];
