@@ -7,6 +7,7 @@ struct profile
     int balance;
     void display(const profile &person)
     {
+        
         if (person.balance < 500)
         {
             cout << " " << name << " has a balance of less than 500\n";
